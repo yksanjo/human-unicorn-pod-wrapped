@@ -1,6 +1,7 @@
 {
   "name": "humanunicornpodwrapped2025",
   "version": "1.0.0",
+  "type": "module",
   "description": "Spotify Wrapped-style visualization for Human Unicorn Pod 2025",
   "private": true,
   "scripts": {
@@ -9,10 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "html2canvas": "^1.4.1",
+    "lucide-react": "^0.263.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "lucide-react": "^0.263.1",
-    "html2canvas": "^1.4.1"
+    "recharts": "^3.6.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -24,4 +26,3 @@
     "vite": "^4.4.5"
   }
 }
-

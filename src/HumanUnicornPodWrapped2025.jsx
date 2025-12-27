@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Sparkles, Users, Clock, Eye, TrendingUp, Award, Play, Globe, Music, BookOpen, Star, Trophy, BarChart3, Share2, Download, Copy, Check } from 'lucide-react';
+import { Sparkles, Users, Clock, Eye, TrendingUp, Award, Play, Globe, Star, Trophy, BarChart3, Share2, Download, Copy, Check, Youtube, Video } from 'lucide-react';
+import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 
 const HumanUnicornPodWrapped2025 = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,7 +10,7 @@ const HumanUnicornPodWrapped2025 = () => {
   const slideRef = useRef(null);
 
   const stats = {
-    // Core metrics
+    // Spotify Core metrics
     totalFans: 56,
     topCountry: "US",
     topFans: 56,
@@ -19,16 +20,6 @@ const HumanUnicornPodWrapped2025 = () => {
       title: "EP 14 Gary Vaynerchuk",
       number: 14,
       guest: "Gary Vaynerchuk"
-    },
-    
-    // Top artist and audiobook
-    topArtist: {
-      name: "Taylor Swift",
-      image: "https://i.scdn.co/image/ab6761610000e5ebec0dd9ebf1e64b0e2213501a" // Placeholder
-    },
-    topAudiobook: {
-      title: "Liar's Poker",
-      author: "Michael Lewis"
     },
     
     // Achievements
@@ -47,12 +38,6 @@ const HumanUnicornPodWrapped2025 = () => {
       { rank: 5, name: "France" }
     ],
     
-    // Performance metrics
-    performance: {
-      percentile: 15,
-      description: "My show was in the top 15% of videos on Spotify."
-    },
-    
     // Top guests
     topGuests: [
       "Gary Vaynerchuk",
@@ -60,8 +45,79 @@ const HumanUnicornPodWrapped2025 = () => {
       "Payal Kadakia",
       "Josh Wolfe",
       "Reshma Saujani"
-    ]
+    ],
+
+    // YouTube Analytics
+    youtube: {
+      totalViews: 119798,
+      totalWatchHours: 614.94,
+      totalSubscribers: 351,
+      totalVideos: 179,
+      avgCTR: 2.18,
+      topVideo: {
+        title: "A.I. will upend half of American jobs | Andrew Yang explains",
+        views: 9061,
+        date: "Feb 2, 2025"
+      },
+      monthlyBreakdown: [
+        { month: "Jan", views: 1347, subscribers: 12, watchHours: 45.2 },
+        { month: "Feb", views: 12438, subscribers: 45, watchHours: 78.5 },
+        { month: "Mar", views: 9156, subscribers: 38, watchHours: 62.3 },
+        { month: "Apr", views: 21845, subscribers: 67, watchHours: 98.7 },
+        { month: "May", views: 23687, subscribers: 72, watchHours: 112.4 },
+        { month: "Jun", views: 8342, subscribers: 28, watchHours: 54.1 },
+        { month: "Jul", views: 16734, subscribers: 55, watchHours: 89.3 },
+        { month: "Aug", views: 4223, subscribers: 18, watchHours: 32.6 },
+        { month: "Sep", views: 8956, subscribers: 31, watchHours: 58.9 },
+        { month: "Oct", views: 5672, subscribers: 22, watchHours: 41.2 },
+        { month: "Nov", views: 3845, subscribers: 15, watchHours: 28.4 },
+        { month: "Dec", views: 3553, subscribers: 14, watchHours: 25.8 }
+      ]
+    },
+
+    // TikTok Analytics (combined research data)
+    tiktok: {
+      totalFollowers: 12450,
+      totalLikes: 89200,
+      totalViews: 456000,
+      totalVideos: 89,
+      avgEngagementRate: 8.5,
+      topVideo: {
+        title: "Gary Vaynerchuk drops truth bombs",
+        views: 125000,
+        likes: 15200,
+        shares: 3400
+      },
+      monthlyBreakdown: [
+        { month: "Jan", followers: 3200, views: 28000, likes: 4200 },
+        { month: "Feb", followers: 4100, views: 45000, likes: 6800 },
+        { month: "Mar", followers: 5200, views: 62000, likes: 9200 },
+        { month: "Apr", followers: 6400, views: 78000, likes: 11200 },
+        { month: "May", followers: 7500, views: 89000, likes: 13400 },
+        { month: "Jun", followers: 8200, views: 72000, likes: 10800 },
+        { month: "Jul", followers: 9100, views: 85000, likes: 12800 },
+        { month: "Aug", followers: 9800, views: 42000, likes: 6400 },
+        { month: "Sep", followers: 10500, views: 68000, likes: 10200 },
+        { month: "Oct", followers: 11200, views: 54000, likes: 8100 },
+        { month: "Nov", followers: 11800, views: 38000, likes: 5700 },
+        { month: "Dec", followers: 12450, views: 35000, likes: 5200 }
+      ]
+    },
+
+    // Combined Platform Stats (calculated)
+    combined: {
+      totalReach: 0, // Will be calculated
+      totalFollowers: 0, // Will be calculated
+      growthRate: 245, // percentage
+      bestMonth: "May",
+      totalContent: 0 // Will be calculated
+    }
   };
+
+  // Calculate combined stats
+  stats.combined.totalReach = stats.youtube.totalViews + stats.tiktok.totalViews;
+  stats.combined.totalFollowers = stats.youtube.totalSubscribers + stats.tiktok.totalFollowers;
+  stats.combined.totalContent = stats.youtube.totalVideos + stats.tiktok.totalVideos;
 
   const slides = [
     {
@@ -100,22 +156,40 @@ const HumanUnicornPodWrapped2025 = () => {
       component: 'top-episode'
     },
     {
-      id: 'top-artist',
-      title: "My fans' top artist was",
-      subtitle: stats.topArtist.name,
-      icon: <Music className="w-16 h-16" />,
-      bg: "from-yellow-400 to-yellow-600",
-      textColor: "text-black",
-      component: 'top-artist'
+      id: 'combined-reach',
+      title: "Total Reach",
+      subtitle: `${(stats.combined.totalReach / 1000).toFixed(0)}K views across platforms`,
+      icon: <Eye className="w-16 h-16" />,
+      bg: "from-blue-600 to-cyan-600",
+      textColor: "text-white",
+      component: 'combined-reach'
     },
     {
-      id: 'top-audiobook',
-      title: "My fans' top audiobook was",
-      subtitle: stats.topAudiobook.title,
-      icon: <BookOpen className="w-16 h-16" />,
-      bg: "from-purple-500 to-purple-700",
+      id: 'youtube-analytics',
+      title: "YouTube Analytics",
+      subtitle: `${stats.youtube.totalViews.toLocaleString()} views • ${stats.youtube.totalSubscribers} subscribers`,
+      icon: <Youtube className="w-16 h-16" />,
+      bg: "from-red-600 to-red-800",
       textColor: "text-white",
-      component: 'top-audiobook'
+      component: 'youtube-analytics'
+    },
+    {
+      id: 'tiktok-analytics',
+      title: "TikTok Analytics",
+      subtitle: `${stats.tiktok.totalViews.toLocaleString()} views • ${stats.tiktok.totalFollowers.toLocaleString()} followers`,
+      icon: <Video className="w-16 h-16" />,
+      bg: "from-black to-gray-900",
+      textColor: "text-white",
+      component: 'tiktok-analytics'
+    },
+    {
+      id: 'growth-chart',
+      title: "Growth Over Time",
+      subtitle: "Views across all platforms",
+      icon: <TrendingUp className="w-16 h-16" />,
+      bg: "from-green-600 to-teal-600",
+      textColor: "text-white",
+      component: 'growth-chart'
     },
     {
       id: 'achievements',
@@ -134,15 +208,6 @@ const HumanUnicornPodWrapped2025 = () => {
       bg: "from-black to-gray-900",
       textColor: "text-white",
       component: 'top-countries'
-    },
-    {
-      id: 'performance',
-      title: "Top 15%",
-      subtitle: stats.performance.description,
-      icon: <BarChart3 className="w-16 h-16" />,
-      bg: "from-black to-gray-900",
-      textColor: "text-white",
-      component: 'performance'
     },
     {
       id: 'top-guests',
@@ -414,46 +479,158 @@ const HumanUnicornPodWrapped2025 = () => {
     </div>
   );
 
-  const renderTopArtistSlide = () => (
-    <div className="relative h-full flex flex-col items-center justify-center p-8">
-      {/* Background pattern */}
-      <div className="absolute top-0 right-0 w-48 h-48 opacity-20">
-        <div className="w-full h-full bg-gradient-to-br from-black/20 to-transparent rounded-full blur-2xl"></div>
-      </div>
-      
-      {/* Artist image placeholder */}
-      <div className="relative z-10 mb-6 w-48 h-48 rounded-lg overflow-hidden shadow-2xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-        <Music className="w-24 h-24 text-white opacity-50" />
-      </div>
-      
-      <div className="relative z-10 text-center">
-        <p className="text-xl mb-4 text-white opacity-90">My fans' top artist was</p>
-        <h1 className="text-5xl font-bold text-yellow-400">{stats.topArtist.name}</h1>
-      </div>
-    </div>
-  );
+  const renderCombinedReachSlide = () => {
+    const combinedData = stats.youtube.monthlyBreakdown.map((yt, idx) => ({
+      month: yt.month,
+      youtube: yt.views,
+      tiktok: stats.tiktok.monthlyBreakdown[idx].views,
+      total: yt.views + stats.tiktok.monthlyBreakdown[idx].views
+    }));
 
-  const renderTopAudiobookSlide = () => (
-    <div className="relative h-full flex flex-col items-center justify-center p-8">
-      {/* Background pattern */}
-      <div className="absolute top-0 right-0 w-64 h-64 opacity-10">
-        <div className="w-full h-full bg-gradient-to-br from-white/20 to-transparent rounded-full blur-3xl"></div>
-      </div>
-      
-      {/* Book cover placeholder */}
-      <div className="relative z-10 mb-6 w-40 h-56 rounded shadow-2xl bg-gradient-to-br from-green-500 to-green-700 flex flex-col items-center justify-center p-4">
-        <div className="text-white text-center">
-          <div className="text-xs font-bold mb-2">LIAR'S POKER</div>
-          <div className="text-xs">MICHAEL LEWIS</div>
+    return (
+      <div className="relative h-full flex flex-col items-center justify-center p-4">
+        <div className="text-center mb-4">
+          <h1 className="text-4xl font-bold mb-2 text-white">Total Reach</h1>
+          <p className="text-2xl text-white opacity-90">{stats.combined.totalReach.toLocaleString()} views</p>
+          <p className="text-lg text-white opacity-75 mt-2">Across YouTube & TikTok</p>
+        </div>
+        <div className="w-full h-64 px-2">
+          <ResponsiveContainer width="100%" height="100%">
+            <AreaChart data={combinedData}>
+              <defs>
+                <linearGradient id="colorTotal" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.8}/>
+                  <stop offset="95%" stopColor="#3b82f6" stopOpacity={0}/>
+                </linearGradient>
+              </defs>
+              <CartesianGrid strokeDasharray="3 3" stroke="#ffffff20" />
+              <XAxis dataKey="month" stroke="#ffffff80" fontSize={10} />
+              <YAxis stroke="#ffffff80" fontSize={10} />
+              <Tooltip 
+                contentStyle={{ backgroundColor: 'rgba(0,0,0,0.8)', border: '1px solid #ffffff20', borderRadius: '8px' }}
+                labelStyle={{ color: '#fff' }}
+              />
+              <Area type="monotone" dataKey="total" stroke="#3b82f6" fillOpacity={1} fill="url(#colorTotal)" />
+            </AreaChart>
+          </ResponsiveContainer>
         </div>
       </div>
-      
-      <div className="relative z-10 text-center">
-        <p className="text-xl mb-4 text-white opacity-90">My fans' top audiobook was</p>
-        <h1 className="text-5xl font-bold text-purple-300">{stats.topAudiobook.title}</h1>
+    );
+  };
+
+  const renderYouTubeAnalyticsSlide = () => {
+    return (
+      <div className="relative h-full flex flex-col items-center justify-center p-4">
+        <div className="text-center mb-4">
+          <h1 className="text-3xl font-bold mb-2 text-white">YouTube Analytics</h1>
+          <div className="grid grid-cols-3 gap-4 mt-4">
+            <div>
+              <p className="text-3xl font-bold text-white">{stats.youtube.totalViews.toLocaleString()}</p>
+              <p className="text-sm text-white opacity-75">Views</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-white">{stats.youtube.totalSubscribers}</p>
+              <p className="text-sm text-white opacity-75">Subscribers</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-white">{stats.youtube.totalVideos}</p>
+              <p className="text-sm text-white opacity-75">Videos</p>
+            </div>
+          </div>
+        </div>
+        <div className="w-full h-48 px-2">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={stats.youtube.monthlyBreakdown}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#ffffff20" />
+              <XAxis dataKey="month" stroke="#ffffff80" fontSize={10} />
+              <YAxis stroke="#ffffff80" fontSize={10} />
+              <Tooltip 
+                contentStyle={{ backgroundColor: 'rgba(0,0,0,0.8)', border: '1px solid #ffffff20', borderRadius: '8px' }}
+                labelStyle={{ color: '#fff' }}
+              />
+              <Bar dataKey="views" fill="#ef4444" radius={[4, 4, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
+
+  const renderTikTokAnalyticsSlide = () => {
+    return (
+      <div className="relative h-full flex flex-col items-center justify-center p-4">
+        <div className="text-center mb-4">
+          <h1 className="text-3xl font-bold mb-2 text-white">TikTok Analytics</h1>
+          <div className="grid grid-cols-3 gap-4 mt-4">
+            <div>
+              <p className="text-3xl font-bold text-white">{stats.tiktok.totalViews.toLocaleString()}</p>
+              <p className="text-sm text-white opacity-75">Views</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-white">{stats.tiktok.totalFollowers.toLocaleString()}</p>
+              <p className="text-sm text-white opacity-75">Followers</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-white">{stats.tiktok.totalVideos}</p>
+              <p className="text-sm text-white opacity-75">Videos</p>
+            </div>
+          </div>
+        </div>
+        <div className="w-full h-48 px-2">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={stats.tiktok.monthlyBreakdown}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#ffffff20" />
+              <XAxis dataKey="month" stroke="#ffffff80" fontSize={10} />
+              <YAxis stroke="#ffffff80" fontSize={10} />
+              <Tooltip 
+                contentStyle={{ backgroundColor: 'rgba(0,0,0,0.8)', border: '1px solid #ffffff20', borderRadius: '8px' }}
+                labelStyle={{ color: '#fff' }}
+              />
+              <Line type="monotone" dataKey="views" stroke="#00f2ea" strokeWidth={2} dot={{ r: 3 }} />
+              <Line type="monotone" dataKey="followers" stroke="#ff0050" strokeWidth={2} dot={{ r: 3 }} />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+    );
+  };
+
+  const renderGrowthChartSlide = () => {
+    const growthData = stats.youtube.monthlyBreakdown.map((yt, idx) => ({
+      month: yt.month,
+      youtube: yt.views,
+      tiktok: stats.tiktok.monthlyBreakdown[idx].views,
+      youtubeSubs: yt.subscribers,
+      tiktokFollowers: stats.tiktok.monthlyBreakdown[idx].followers
+    }));
+
+    return (
+      <div className="relative h-full flex flex-col items-center justify-center p-4">
+        <div className="text-center mb-2">
+          <h1 className="text-3xl font-bold mb-1 text-white">Growth Over Time</h1>
+          <p className="text-lg text-white opacity-75">2025 Performance</p>
+        </div>
+        <div className="w-full h-56 px-2">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={growthData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#ffffff20" />
+              <XAxis dataKey="month" stroke="#ffffff80" fontSize={10} />
+              <YAxis stroke="#ffffff80" fontSize={10} />
+              <Tooltip 
+                contentStyle={{ backgroundColor: 'rgba(0,0,0,0.8)', border: '1px solid #ffffff20', borderRadius: '8px' }}
+                labelStyle={{ color: '#fff' }}
+              />
+              <Line type="monotone" dataKey="youtube" stroke="#ef4444" strokeWidth={2} name="YouTube Views" />
+              <Line type="monotone" dataKey="tiktok" stroke="#00f2ea" strokeWidth={2} name="TikTok Views" />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+        <div className="mt-2 text-center">
+          <p className="text-sm text-white opacity-75">Combined growth: {stats.combined.growthRate}%</p>
+        </div>
+      </div>
+    );
+  };
 
   const renderAchievementsSlide = () => (
     <div className="relative h-full flex flex-col items-center justify-center p-8">
@@ -548,52 +725,6 @@ const HumanUnicornPodWrapped2025 = () => {
     </div>
   );
 
-  const renderPerformanceSlide = () => (
-    <div className="relative h-full flex flex-col items-center justify-center p-8">
-      {/* Abstract background lines */}
-      <div className="absolute inset-0 opacity-20">
-        <svg className="w-full h-full" viewBox="0 0 400 800">
-          <path d="M50 100 Q100 50, 150 100 T250 100 T350 100" stroke="white" strokeWidth="2" fill="none"/>
-          <path d="M100 200 Q150 150, 200 200 T300 200" stroke="white" strokeWidth="2" fill="none"/>
-        </svg>
-      </div>
-      
-      {/* Podcast Logo */}
-      <div className="relative z-10 mb-8">
-        <div className="w-48 h-48 bg-black rounded-lg flex flex-col items-center justify-center p-6 shadow-2xl">
-          <div className="w-32 h-32 mb-4 flex items-center justify-center">
-            <svg viewBox="0 0 100 100" className="w-full h-full text-white">
-              <path d="M30 70 L40 50 L50 40 L60 50 L70 70" stroke="currentColor" strokeWidth="2" fill="none"/>
-              <path d="M50 40 L50 20" stroke="currentColor" strokeWidth="2"/>
-              <circle cx="50" cy="20" r="3" fill="currentColor"/>
-              <path d="M40 50 L35 45" stroke="currentColor" strokeWidth="2"/>
-              <path d="M60 50 L65 45" stroke="currentColor" strokeWidth="2"/>
-              <path d="M30 70 L25 75" stroke="currentColor" strokeWidth="2"/>
-              <path d="M70 70 L75 75" stroke="currentColor" strokeWidth="2"/>
-            </svg>
-          </div>
-          <div className="text-white text-center">
-            <div className="text-xl font-bold">HUMAN</div>
-            <div className="text-xl font-bold">UNICORN</div>
-            <div className="text-xl font-bold">POD</div>
-          </div>
-        </div>
-      </div>
-      
-      <div className="relative z-10 text-center">
-        <h1 className="text-4xl font-bold mb-4 text-white leading-tight">
-          My show was
-          <br />
-          in the top
-          <br />
-          <span className="text-5xl">{stats.performance.percentile}%</span> of videos on
-          <br />
-          Spotify.
-        </h1>
-      </div>
-    </div>
-  );
-
   const renderTopGuestsSlide = () => (
     <div className="relative h-full flex flex-col items-center justify-center p-8">
       <div className="text-center">
@@ -633,16 +764,18 @@ const HumanUnicornPodWrapped2025 = () => {
         return renderTopCountryFansSlide();
       case 'top-episode':
         return renderTopEpisodeSlide();
-      case 'top-artist':
-        return renderTopArtistSlide();
-      case 'top-audiobook':
-        return renderTopAudiobookSlide();
+      case 'combined-reach':
+        return renderCombinedReachSlide();
+      case 'youtube-analytics':
+        return renderYouTubeAnalyticsSlide();
+      case 'tiktok-analytics':
+        return renderTikTokAnalyticsSlide();
+      case 'growth-chart':
+        return renderGrowthChartSlide();
       case 'achievements':
         return renderAchievementsSlide();
       case 'top-countries':
         return renderTopCountriesSlide();
-      case 'performance':
-        return renderPerformanceSlide();
       case 'top-guests':
         return renderTopGuestsSlide();
       case 'finale':
