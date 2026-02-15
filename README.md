@@ -56,3 +56,6 @@ The component features:
 - Abstract background patterns
 - Gradient backgrounds matching Spotify's style
 
+
+
+

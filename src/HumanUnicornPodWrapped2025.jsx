@@ -125,7 +125,7 @@ const HumanUnicornPodWrapped2025 = () => {
       title: "Human Unicorn Pod",
       subtitle: "2025 Wrapped",
       icon: <Sparkles className="w-16 h-16" />,
-      bg: "from-slate-900 via-gray-900 to-black",
+      bg: "from-emerald-600 via-purple-600 to-pink-600",
       textColor: "text-white",
       component: 'cover'
     },
@@ -134,7 +134,7 @@ const HumanUnicornPodWrapped2025 = () => {
       title: "Human Unicorn Pod",
       subtitle: `#1 show for ${stats.totalFans} fans`,
       icon: <Trophy className="w-16 h-16" />,
-      bg: "from-slate-900 via-gray-900 to-black",
+      bg: "from-yellow-500 via-orange-500 to-red-500",
       textColor: "text-white",
       component: 'overview'
     },
@@ -143,7 +143,7 @@ const HumanUnicornPodWrapped2025 = () => {
       title: "Your Community",
       subtitle: "Top country & Top fans",
       icon: <Globe className="w-16 h-16" />,
-      bg: "from-slate-900 via-gray-900 to-black",
+      bg: "from-blue-500 via-cyan-500 to-teal-500",
       textColor: "text-white",
       component: 'top-country-fans'
     },
@@ -152,7 +152,7 @@ const HumanUnicornPodWrapped2025 = () => {
       title: "Top episode",
       subtitle: stats.topEpisode.title,
       icon: <Play className="w-16 h-16" />,
-      bg: "from-slate-900 via-gray-900 to-black",
+      bg: "from-purple-600 via-pink-600 to-rose-600",
       textColor: "text-white",
       component: 'top-episode'
     },
@@ -161,7 +161,7 @@ const HumanUnicornPodWrapped2025 = () => {
       title: "Total Reach",
       subtitle: `${(stats.combined.totalReach / 1000).toFixed(0)}K views across platforms`,
       icon: <Eye className="w-16 h-16" />,
-      bg: "from-slate-900 via-blue-900 to-slate-900",
+      bg: "from-indigo-600 via-blue-600 to-cyan-500",
       textColor: "text-white",
       component: 'combined-reach'
     },
@@ -170,7 +170,7 @@ const HumanUnicornPodWrapped2025 = () => {
       title: "YouTube Analytics",
       subtitle: `${stats.youtube.totalViews.toLocaleString()} views • ${stats.youtube.totalSubscribers} subscribers`,
       icon: <Youtube className="w-16 h-16" />,
-      bg: "from-slate-900 via-red-900 to-slate-900",
+      bg: "from-red-600 via-rose-600 to-pink-600",
       textColor: "text-white",
       component: 'youtube-analytics'
     },
@@ -179,7 +179,7 @@ const HumanUnicornPodWrapped2025 = () => {
       title: "TikTok Analytics",
       subtitle: `${stats.tiktok.totalViews.toLocaleString()} views • ${stats.tiktok.totalFollowers.toLocaleString()} followers`,
       icon: <Video className="w-16 h-16" />,
-      bg: "from-slate-900 via-gray-900 to-black",
+      bg: "from-cyan-500 via-teal-500 to-emerald-500",
       textColor: "text-white",
       component: 'tiktok-analytics'
     },
@@ -188,7 +188,7 @@ const HumanUnicornPodWrapped2025 = () => {
       title: "Growth Over Time",
       subtitle: "Views across all platforms",
       icon: <TrendingUp className="w-16 h-16" />,
-      bg: "from-slate-900 via-emerald-900 to-slate-900",
+      bg: "from-green-500 via-emerald-500 to-teal-500",
       textColor: "text-white",
       component: 'growth-chart'
     },
@@ -197,7 +197,7 @@ const HumanUnicornPodWrapped2025 = () => {
       title: "Your Achievements",
       subtitle: "2025 Highlights",
       icon: <Award className="w-16 h-16" />,
-      bg: "from-slate-900 via-purple-900 to-slate-900",
+      bg: "from-violet-600 via-purple-600 to-fuchsia-600",
       textColor: "text-white",
       component: 'achievements'
     },
@@ -206,7 +206,7 @@ const HumanUnicornPodWrapped2025 = () => {
       title: "Top countries",
       subtitle: "Where your fans are",
       icon: <Globe className="w-16 h-16" />,
-      bg: "from-slate-900 via-gray-900 to-black",
+      bg: "from-blue-600 via-indigo-600 to-purple-600",
       textColor: "text-white",
       component: 'top-countries'
     },
@@ -215,7 +215,7 @@ const HumanUnicornPodWrapped2025 = () => {
       title: "Star Guests",
       subtitle: stats.topGuests.join(" • "),
       icon: <TrendingUp className="w-16 h-16" />,
-      bg: "from-slate-900 via-indigo-900 to-slate-900",
+      bg: "from-pink-600 via-rose-600 to-orange-500",
       textColor: "text-white",
       component: 'top-guests'
     },
@@ -224,7 +224,7 @@ const HumanUnicornPodWrapped2025 = () => {
       title: "2026 Awaits",
       subtitle: "Keep creating, keep inspiring",
       icon: <Star className="w-16 h-16" />,
-      bg: "from-slate-900 via-pink-900 to-slate-900",
+      bg: "from-purple-600 via-pink-600 to-yellow-500",
       textColor: "text-white",
       component: 'finale'
     }
@@ -232,7 +232,7 @@ const HumanUnicornPodWrapped2025 = () => {
 
   useEffect(() => {
     setAnimate(true);
-    const timer = setTimeout(() => setAnimate(false), 600);
+    const timer = setTimeout(() => setAnimate(false), 800);
     return () => clearTimeout(timer);
   }, [currentSlide]);
 
@@ -349,131 +349,132 @@ const HumanUnicornPodWrapped2025 = () => {
   const slide = slides[currentSlide];
 
   const renderCoverSlide = () => (
-    <div className="relative h-full flex flex-col items-center justify-center p-8">
-      {/* Abstract background elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 opacity-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl"></div>
-      </div>
+    <div className="relative h-full flex flex-col items-center justify-center p-12 overflow-hidden">
+      {/* Animated gradient orbs - more subtle and strategic */}
+      <div className="absolute -top-32 -right-32 w-96 h-96 bg-white/15 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       
-      {/* Podcast Logo */}
-      <div className="relative z-10 mb-8">
-        <div className="w-48 h-48 bg-black rounded-lg flex flex-col items-center justify-center p-6 shadow-2xl">
-          {/* Unicorn illustration placeholder - you can replace with actual SVG */}
-          <div className="w-32 h-32 mb-4 flex items-center justify-center">
-            <svg viewBox="0 0 100 100" className="w-full h-full text-white">
-              {/* Simplified unicorn wireframe */}
-              <path d="M30 70 L40 50 L50 40 L60 50 L70 70" stroke="currentColor" strokeWidth="2" fill="none"/>
-              <path d="M50 40 L50 20" stroke="currentColor" strokeWidth="2"/>
-              <circle cx="50" cy="20" r="3" fill="currentColor"/>
-              <path d="M40 50 L35 45" stroke="currentColor" strokeWidth="2"/>
-              <path d="M60 50 L65 45" stroke="currentColor" strokeWidth="2"/>
-              <path d="M30 70 L25 75" stroke="currentColor" strokeWidth="2"/>
-              <path d="M70 70 L75 75" stroke="currentColor" strokeWidth="2"/>
-            </svg>
-          </div>
-          <div className="text-white text-center">
-            <div className="text-2xl font-bold">HUMAN</div>
-            <div className="text-2xl font-bold">UNICORN</div>
-            <div className="text-2xl font-bold">POD</div>
+      {/* Main content with better spacing */}
+      <div className="relative z-10 flex flex-col items-center justify-center space-y-16">
+        {/* Logo - larger and more prominent */}
+        <div className={`transform transition-all duration-1000 ${animate ? 'scale-90 opacity-0 translate-y-8' : 'scale-100 opacity-100 translate-y-0'}`}>
+          <div className="w-64 h-64 bg-black/50 backdrop-blur-2xl rounded-[2.5rem] flex flex-col items-center justify-center p-8 shadow-[0_0_60px_rgba(255,255,255,0.1)] border border-white/20">
+            <div className="w-40 h-40 mb-6 flex items-center justify-center">
+              <svg viewBox="0 0 100 100" className="w-full h-full text-white">
+                <path d="M30 70 L40 50 L50 40 L60 50 L70 70" stroke="currentColor" strokeWidth="3" fill="none"/>
+                <path d="M50 40 L50 20" stroke="currentColor" strokeWidth="3"/>
+                <circle cx="50" cy="20" r="5" fill="currentColor"/>
+                <path d="M40 50 L35 45" stroke="currentColor" strokeWidth="3"/>
+                <path d="M60 50 L65 45" stroke="currentColor" strokeWidth="3"/>
+                <path d="M30 70 L25 75" stroke="currentColor" strokeWidth="3"/>
+                <path d="M70 70 L75 75" stroke="currentColor" strokeWidth="3"/>
+              </svg>
+            </div>
+            <div className="text-white text-center space-y-1">
+              <div className="text-4xl font-black tracking-[-0.02em] leading-none">HUMAN</div>
+              <div className="text-4xl font-black tracking-[-0.02em] leading-none">UNICORN</div>
+              <div className="text-4xl font-black tracking-[-0.02em] leading-none">POD</div>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div className="relative z-10 text-center">
-        <div className="inline-block bg-white/10 backdrop-blur-md px-6 py-3 rounded-xl mb-4 border border-white/20 shadow-2xl">
-          <h1 className="text-2xl font-bold text-white">Human Unicorn Pod</h1>
+        
+        {/* Title section - more dramatic */}
+        <div className={`text-center space-y-6 transform transition-all duration-1000 delay-300 ${animate ? 'translate-y-8 opacity-0' : 'translate-y-0 opacity-100'}`}>
+          <h1 className="text-6xl font-black text-white tracking-[-0.03em] leading-[1.1]">
+            Human Unicorn Pod
+          </h1>
+          <div className="h-px w-24 bg-white/30 mx-auto"></div>
+          <p className="text-5xl font-bold text-white/90 tracking-wide">2025 Wrapped</p>
         </div>
-        <p className="text-white text-xl opacity-90 font-light">2025 Wrapped</p>
       </div>
     </div>
   );
 
   const renderOverviewSlide = () => (
-    <div className="relative h-full flex flex-col items-center justify-center p-8">
-      {/* Abstract gradient orbs */}
-      <div className="absolute top-10 right-10 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 left-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
+    <div className="relative h-full flex flex-col items-center justify-center p-12 overflow-hidden">
+      {/* Subtle background elements */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/8 rounded-full blur-3xl"></div>
       
-      {/* Podcast Logo */}
-      <div className="relative z-10 mb-8">
-        <div className="w-48 h-48 bg-gradient-to-br from-slate-800 to-black rounded-2xl flex flex-col items-center justify-center p-6 shadow-2xl border border-white/10">
-          <div className="w-32 h-32 mb-4 flex items-center justify-center">
-            <svg viewBox="0 0 100 100" className="w-full h-full text-white">
-              <path d="M30 70 L40 50 L50 40 L60 50 L70 70" stroke="currentColor" strokeWidth="2" fill="none"/>
-              <path d="M50 40 L50 20" stroke="currentColor" strokeWidth="2"/>
-              <circle cx="50" cy="20" r="3" fill="currentColor"/>
-              <path d="M40 50 L35 45" stroke="currentColor" strokeWidth="2"/>
-              <path d="M60 50 L65 45" stroke="currentColor" strokeWidth="2"/>
-              <path d="M30 70 L25 75" stroke="currentColor" strokeWidth="2"/>
-              <path d="M70 70 L75 75" stroke="currentColor" strokeWidth="2"/>
-            </svg>
-          </div>
-          <div className="text-white text-center">
-            <div className="text-xl font-bold">HUMAN</div>
-            <div className="text-xl font-bold">UNICORN</div>
-            <div className="text-xl font-bold">POD</div>
+      {/* Main content with better hierarchy */}
+      <div className="relative z-10 flex flex-col items-center justify-center space-y-20">
+        {/* Large number first - most important */}
+        <div className={`transform transition-all duration-1000 ${animate ? 'scale-90 opacity-0 translate-y-8' : 'scale-100 opacity-100 translate-y-0'}`}>
+          <div className="text-[180px] font-black text-white leading-none tracking-[-0.05em]">
+            #{stats.totalFans}
           </div>
         </div>
-      </div>
-      
-      <div className="relative z-10 text-center">
-        <h1 className="text-5xl font-bold mb-2 text-white">#1 show</h1>
-        <h2 className="text-6xl font-bold text-white bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">for {stats.totalFans} fans</h2>
+        
+        {/* Supporting text */}
+        <div className={`text-center space-y-4 transform transition-all duration-1000 delay-300 ${animate ? 'translate-y-8 opacity-0' : 'translate-y-0 opacity-100'}`}>
+          <h1 className="text-5xl font-black text-white tracking-[-0.02em] leading-tight">
+            SHOW FOR YOUR FANS
+          </h1>
+          <p className="text-2xl font-medium text-white/70 tracking-wide">
+            Human Unicorn Pod
+          </p>
+        </div>
       </div>
     </div>
   );
 
   const renderTopCountryFansSlide = () => (
-    <div className="relative h-full flex flex-col items-center justify-center p-8">
-      <div className="absolute top-20 right-20 w-24 h-24 bg-emerald-500/20 rounded-full blur-2xl"></div>
-      <div className="absolute bottom-20 left-20 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl"></div>
+    <div className="relative h-full flex flex-col items-center justify-center p-12 overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-white/8 rounded-full blur-3xl"></div>
       
-      <div className="grid grid-cols-2 gap-8 w-full max-w-md relative z-10">
-        <div className="text-center bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-xl">
-          <p className="text-sm mb-3 text-white/60 uppercase tracking-wider font-medium">Top country</p>
-          <p className="text-6xl font-bold text-white">{stats.topCountry}</p>
+      {/* Title */}
+      <div className={`absolute top-16 left-0 right-0 text-center transform transition-all duration-1000 ${animate ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
+        <h2 className="text-2xl font-bold text-white/60 uppercase tracking-widest">Your Community</h2>
+      </div>
+      
+      {/* Main stats - side by side with better spacing */}
+      <div className={`relative z-10 w-full max-w-lg grid grid-cols-2 gap-8 transform transition-all duration-1000 delay-200 ${animate ? 'scale-95 opacity-0' : 'scale-100 opacity-100'}`}>
+        <div className="flex flex-col items-center justify-center space-y-6">
+          <p className="text-xs font-bold text-white/50 uppercase tracking-[0.2em]">Top Country</p>
+          <div className="text-[120px] font-black text-white leading-none tracking-[-0.05em]">
+            {stats.topCountry}
+          </div>
         </div>
-        <div className="text-center bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-xl">
-          <p className="text-sm mb-3 text-white/60 uppercase tracking-wider font-medium">Top fans</p>
-          <p className="text-6xl font-bold text-white bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">{stats.topFans}</p>
+        <div className="flex flex-col items-center justify-center space-y-6">
+          <p className="text-xs font-bold text-white/50 uppercase tracking-[0.2em]">Top Fans</p>
+          <div className="text-[120px] font-black text-white leading-none tracking-[-0.05em]">
+            {stats.topFans}
+          </div>
         </div>
       </div>
     </div>
   );
 
   const renderTopEpisodeSlide = () => (
-    <div className="relative h-full flex flex-col items-center justify-center p-8">
-      {/* Abstract gradient orbs */}
-      <div className="absolute top-0 right-0 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl"></div>
+    <div className="relative h-full flex flex-col items-center justify-center p-12 overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/8 rounded-full blur-3xl"></div>
       
-      {/* Podcast Logo */}
-      <div className="relative z-10 mb-8">
-        <div className="w-40 h-40 bg-gradient-to-br from-slate-800 to-black rounded-2xl flex flex-col items-center justify-center p-4 shadow-2xl border border-white/10">
-          <div className="w-24 h-24 mb-2 flex items-center justify-center">
-            <svg viewBox="0 0 100 100" className="w-full h-full text-white">
-              <path d="M30 70 L40 50 L50 40 L60 50 L70 70" stroke="currentColor" strokeWidth="2" fill="none"/>
-              <path d="M50 40 L50 20" stroke="currentColor" strokeWidth="2"/>
-              <circle cx="50" cy="20" r="3" fill="currentColor"/>
-            </svg>
-          </div>
-          <div className="text-white text-center text-xs">
-            <div className="font-bold">HUMAN</div>
-            <div className="font-bold">UNICORN</div>
-            <div className="font-bold">POD</div>
+      {/* Main content */}
+      <div className="relative z-10 flex flex-col items-center justify-center space-y-16">
+        {/* Episode number - large and prominent */}
+        <div className={`transform transition-all duration-1000 ${animate ? 'scale-90 opacity-0 translate-y-8' : 'scale-100 opacity-100 translate-y-0'}`}>
+          <div className="text-[200px] font-black text-white/20 leading-none tracking-[-0.05em]">
+            EP {stats.topEpisode.number}
           </div>
         </div>
-      </div>
-      
-      <div className="relative z-10 text-center">
-        <p className="text-sm mb-4 text-white/60 uppercase tracking-wider font-medium">Top episode</p>
-        <h1 className="text-4xl font-bold text-white leading-tight">
-          {stats.topEpisode.title.split(' ').slice(0, 1).join(' ')}
-          <br />
-          <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            {stats.topEpisode.title.split(' ').slice(1).join(' ')}
-          </span>
-        </h1>
+        
+        {/* Episode details */}
+        <div className={`text-center space-y-6 transform transition-all duration-1000 delay-300 ${animate ? 'translate-y-8 opacity-0' : 'translate-y-0 opacity-100'}`}>
+          <p className="text-sm font-bold text-white/50 uppercase tracking-[0.3em]">Top Episode</p>
+          <div className="space-y-3">
+            <h1 className="text-5xl font-black text-white leading-tight tracking-[-0.02em]">
+              {stats.topEpisode.guest}
+            </h1>
+            <div className="h-px w-16 bg-white/30 mx-auto"></div>
+            <p className="text-xl font-medium text-white/70">
+              Episode {stats.topEpisode.number}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -487,32 +488,44 @@ const HumanUnicornPodWrapped2025 = () => {
     }));
 
     return (
-      <div className="relative h-full flex flex-col items-center justify-center p-4">
-        <div className="absolute top-10 right-10 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl"></div>
+      <div className="relative h-full flex flex-col items-center justify-center p-12 overflow-hidden">
+        {/* Background */}
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-white/8 rounded-full blur-3xl"></div>
         
-        <div className="text-center mb-4 relative z-10">
-          <h1 className="text-4xl font-bold mb-2 text-white">Total Reach</h1>
-          <p className="text-3xl text-white font-light bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">{stats.combined.totalReach.toLocaleString()} views</p>
-          <p className="text-sm text-white/60 mt-2 uppercase tracking-wider">Across YouTube & TikTok</p>
+        {/* Main number - most prominent */}
+        <div className={`relative z-10 text-center mb-12 transform transition-all duration-1000 ${animate ? 'scale-90 opacity-0 translate-y-8' : 'scale-100 opacity-100 translate-y-0'}`}>
+          <p className="text-sm font-bold text-white/50 uppercase tracking-[0.3em] mb-6">Total Reach</p>
+          <div className="text-[140px] font-black text-white leading-none tracking-[-0.05em] mb-4">
+            {(stats.combined.totalReach / 1000).toFixed(0)}K
+          </div>
+          <p className="text-xl font-medium text-white/70">views across platforms</p>
         </div>
-        <div className="w-full h-64 px-2 relative z-10">
+        
+        {/* Chart - cleaner and more minimal */}
+        <div className={`w-full h-48 px-4 relative z-10 transform transition-all duration-1000 delay-300 ${animate ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
           <ResponsiveContainer width="100%" height="100%">
-            <AreaChart data={combinedData}>
+            <AreaChart data={combinedData} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
               <defs>
                 <linearGradient id="colorTotal" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#60a5fa" stopOpacity={0.6}/>
-                  <stop offset="95%" stopColor="#60a5fa" stopOpacity={0}/>
+                  <stop offset="5%" stopColor="#ffffff" stopOpacity={0.4}/>
+                  <stop offset="95%" stopColor="#ffffff" stopOpacity={0}/>
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" />
-              <XAxis dataKey="month" stroke="#ffffff60" fontSize={10} />
-              <YAxis stroke="#ffffff60" fontSize={10} />
+              <XAxis dataKey="month" stroke="#ffffff40" fontSize={10} tick={{ fill: '#ffffff40' }} />
+              <YAxis hide />
               <Tooltip 
-                contentStyle={{ backgroundColor: 'rgba(15, 23, 42, 0.95)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', backdropFilter: 'blur(10px)' }}
-                labelStyle={{ color: '#fff' }}
+                contentStyle={{ 
+                  backgroundColor: 'rgba(0, 0, 0, 0.85)', 
+                  border: '1px solid rgba(255,255,255,0.2)', 
+                  borderRadius: '12px', 
+                  backdropFilter: 'blur(20px)', 
+                  padding: '8px 12px' 
+                }}
+                labelStyle={{ color: '#fff', fontWeight: '600', fontSize: '12px' }}
               />
-              <Area type="monotone" dataKey="total" stroke="#60a5fa" strokeWidth={2} fillOpacity={1} fill="url(#colorTotal)" />
+              <Area type="monotone" dataKey="total" stroke="#ffffff" strokeWidth={2.5} fillOpacity={1} fill="url(#colorTotal)" />
             </AreaChart>
           </ResponsiveContainer>
         </div>
@@ -522,38 +535,55 @@ const HumanUnicornPodWrapped2025 = () => {
 
   const renderYouTubeAnalyticsSlide = () => {
     return (
-      <div className="relative h-full flex flex-col items-center justify-center p-4">
-        <div className="absolute top-10 right-10 w-40 h-40 bg-red-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-32 h-32 bg-orange-500/20 rounded-full blur-3xl"></div>
+      <div className="relative h-full flex flex-col items-center justify-center p-12 overflow-hidden">
+        {/* Background */}
+        <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/8 rounded-full blur-3xl"></div>
         
-        <div className="text-center mb-4 relative z-10">
-          <h1 className="text-3xl font-bold mb-4 text-white">YouTube Analytics</h1>
-          <div className="grid grid-cols-3 gap-3 mt-4">
-            <div className="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10">
-              <p className="text-2xl font-bold text-white">{stats.youtube.totalViews.toLocaleString()}</p>
-              <p className="text-xs text-white/60 mt-1 uppercase tracking-wider">Views</p>
+        {/* Title */}
+        <div className={`absolute top-16 left-0 right-0 text-center transform transition-all duration-1000 ${animate ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
+          <h2 className="text-2xl font-bold text-white/60 uppercase tracking-widest">YouTube</h2>
+        </div>
+        
+        {/* Main stats - vertical layout for better hierarchy */}
+        <div className={`relative z-10 w-full max-w-md space-y-8 transform transition-all duration-1000 delay-200 ${animate ? 'scale-95 opacity-0' : 'scale-100 opacity-100'}`}>
+          <div className="text-center space-y-2">
+            <div className="text-[100px] font-black text-white leading-none tracking-[-0.05em]">
+              {(stats.youtube.totalViews / 1000).toFixed(0)}K
             </div>
-            <div className="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10">
-              <p className="text-2xl font-bold text-white">{stats.youtube.totalSubscribers}</p>
-              <p className="text-xs text-white/60 mt-1 uppercase tracking-wider">Subscribers</p>
+            <p className="text-sm font-bold text-white/50 uppercase tracking-[0.2em]">Total Views</p>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-6">
+            <div className="text-center space-y-2">
+              <div className="text-4xl font-black text-white">{stats.youtube.totalSubscribers}</div>
+              <p className="text-xs font-bold text-white/50 uppercase tracking-[0.2em]">Subscribers</p>
             </div>
-            <div className="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10">
-              <p className="text-2xl font-bold text-white">{stats.youtube.totalVideos}</p>
-              <p className="text-xs text-white/60 mt-1 uppercase tracking-wider">Videos</p>
+            <div className="text-center space-y-2">
+              <div className="text-4xl font-black text-white">{stats.youtube.totalVideos}</div>
+              <p className="text-xs font-bold text-white/50 uppercase tracking-[0.2em]">Videos</p>
             </div>
           </div>
         </div>
-        <div className="w-full h-48 px-2 relative z-10">
+        
+        {/* Chart - minimal */}
+        <div className={`absolute bottom-12 left-0 right-0 px-8 h-32 transform transition-all duration-1000 delay-400 ${animate ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={stats.youtube.monthlyBreakdown}>
+            <BarChart data={stats.youtube.monthlyBreakdown} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" />
-              <XAxis dataKey="month" stroke="#ffffff60" fontSize={10} />
-              <YAxis stroke="#ffffff60" fontSize={10} />
+              <XAxis dataKey="month" stroke="#ffffff30" fontSize={9} tick={{ fill: '#ffffff30' }} />
+              <YAxis hide />
               <Tooltip 
-                contentStyle={{ backgroundColor: 'rgba(15, 23, 42, 0.95)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', backdropFilter: 'blur(10px)' }}
-                labelStyle={{ color: '#fff' }}
+                contentStyle={{ 
+                  backgroundColor: 'rgba(0, 0, 0, 0.85)', 
+                  border: '1px solid rgba(255,255,255,0.2)', 
+                  borderRadius: '12px', 
+                  backdropFilter: 'blur(20px)', 
+                  padding: '8px 12px' 
+                }}
+                labelStyle={{ color: '#fff', fontWeight: '600', fontSize: '12px' }}
               />
-              <Bar dataKey="views" fill="#ef4444" radius={[8, 8, 0, 0]} />
+              <Bar dataKey="views" fill="#ffffff" radius={[8, 8, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -563,39 +593,55 @@ const HumanUnicornPodWrapped2025 = () => {
 
   const renderTikTokAnalyticsSlide = () => {
     return (
-      <div className="relative h-full flex flex-col items-center justify-center p-4">
-        <div className="absolute top-10 right-10 w-36 h-36 bg-cyan-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-28 h-28 bg-pink-500/20 rounded-full blur-3xl"></div>
+      <div className="relative h-full flex flex-col items-center justify-center p-12 overflow-hidden">
+        {/* Background */}
+        <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/8 rounded-full blur-3xl"></div>
         
-        <div className="text-center mb-4 relative z-10">
-          <h1 className="text-3xl font-bold mb-4 text-white">TikTok Analytics</h1>
-          <div className="grid grid-cols-3 gap-3 mt-4">
-            <div className="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10">
-              <p className="text-2xl font-bold text-white">{stats.tiktok.totalViews.toLocaleString()}</p>
-              <p className="text-xs text-white/60 mt-1 uppercase tracking-wider">Views</p>
+        {/* Title */}
+        <div className={`absolute top-16 left-0 right-0 text-center transform transition-all duration-1000 ${animate ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
+          <h2 className="text-2xl font-bold text-white/60 uppercase tracking-widest">TikTok</h2>
+        </div>
+        
+        {/* Main stats */}
+        <div className={`relative z-10 w-full max-w-md space-y-8 transform transition-all duration-1000 delay-200 ${animate ? 'scale-95 opacity-0' : 'scale-100 opacity-100'}`}>
+          <div className="text-center space-y-2">
+            <div className="text-[100px] font-black text-white leading-none tracking-[-0.05em]">
+              {(stats.tiktok.totalViews / 1000).toFixed(0)}K
             </div>
-            <div className="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10">
-              <p className="text-2xl font-bold text-white">{stats.tiktok.totalFollowers.toLocaleString()}</p>
-              <p className="text-xs text-white/60 mt-1 uppercase tracking-wider">Followers</p>
+            <p className="text-sm font-bold text-white/50 uppercase tracking-[0.2em]">Total Views</p>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-6">
+            <div className="text-center space-y-2">
+              <div className="text-4xl font-black text-white">{(stats.tiktok.totalFollowers / 1000).toFixed(1)}K</div>
+              <p className="text-xs font-bold text-white/50 uppercase tracking-[0.2em]">Followers</p>
             </div>
-            <div className="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10">
-              <p className="text-2xl font-bold text-white">{stats.tiktok.totalVideos}</p>
-              <p className="text-xs text-white/60 mt-1 uppercase tracking-wider">Videos</p>
+            <div className="text-center space-y-2">
+              <div className="text-4xl font-black text-white">{stats.tiktok.totalVideos}</div>
+              <p className="text-xs font-bold text-white/50 uppercase tracking-[0.2em]">Videos</p>
             </div>
           </div>
         </div>
-        <div className="w-full h-48 px-2 relative z-10">
+        
+        {/* Chart */}
+        <div className={`absolute bottom-12 left-0 right-0 px-8 h-32 transform transition-all duration-1000 delay-400 ${animate ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={stats.tiktok.monthlyBreakdown}>
+            <LineChart data={stats.tiktok.monthlyBreakdown} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" />
-              <XAxis dataKey="month" stroke="#ffffff60" fontSize={10} />
-              <YAxis stroke="#ffffff60" fontSize={10} />
+              <XAxis dataKey="month" stroke="#ffffff30" fontSize={9} tick={{ fill: '#ffffff30' }} />
+              <YAxis hide />
               <Tooltip 
-                contentStyle={{ backgroundColor: 'rgba(15, 23, 42, 0.95)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', backdropFilter: 'blur(10px)' }}
-                labelStyle={{ color: '#fff' }}
+                contentStyle={{ 
+                  backgroundColor: 'rgba(0, 0, 0, 0.85)', 
+                  border: '1px solid rgba(255,255,255,0.2)', 
+                  borderRadius: '12px', 
+                  backdropFilter: 'blur(20px)', 
+                  padding: '8px 12px' 
+                }}
+                labelStyle={{ color: '#fff', fontWeight: '600', fontSize: '12px' }}
               />
-              <Line type="monotone" dataKey="views" stroke="#00f2ea" strokeWidth={2} dot={{ r: 4, fill: '#00f2ea' }} />
-              <Line type="monotone" dataKey="followers" stroke="#ff0050" strokeWidth={2} dot={{ r: 4, fill: '#ff0050' }} />
+              <Line type="monotone" dataKey="views" stroke="#ffffff" strokeWidth={2.5} dot={false} />
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -613,127 +659,156 @@ const HumanUnicornPodWrapped2025 = () => {
     }));
 
     return (
-      <div className="relative h-full flex flex-col items-center justify-center p-4">
-        <div className="absolute top-10 right-10 w-36 h-36 bg-emerald-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-32 h-32 bg-teal-500/20 rounded-full blur-3xl"></div>
+      <div className="relative h-full flex flex-col items-center justify-center p-12 overflow-hidden">
+        {/* Background */}
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-white/8 rounded-full blur-3xl"></div>
         
-        <div className="text-center mb-2 relative z-10">
-          <h1 className="text-3xl font-bold mb-1 text-white">Growth Over Time</h1>
-          <p className="text-sm text-white/60 uppercase tracking-wider">2025 Performance</p>
+        {/* Title */}
+        <div className={`absolute top-16 left-0 right-0 text-center transform transition-all duration-1000 ${animate ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
+          <h2 className="text-2xl font-bold text-white/60 uppercase tracking-widest">Growth Over Time</h2>
         </div>
-        <div className="w-full h-56 px-2 relative z-10">
+        
+        {/* Growth percentage - prominent */}
+        <div className={`relative z-10 text-center mb-12 transform transition-all duration-1000 delay-200 ${animate ? 'scale-90 opacity-0 translate-y-8' : 'scale-100 opacity-100 translate-y-0'}`}>
+          <div className="text-[140px] font-black text-white leading-none tracking-[-0.05em] mb-4">
+            {stats.combined.growthRate}%
+          </div>
+          <p className="text-xl font-medium text-white/70">Combined Growth</p>
+        </div>
+        
+        {/* Chart */}
+        <div className={`absolute bottom-12 left-0 right-0 px-8 h-40 transform transition-all duration-1000 delay-400 ${animate ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={growthData}>
+            <LineChart data={growthData} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" />
-              <XAxis dataKey="month" stroke="#ffffff60" fontSize={10} />
-              <YAxis stroke="#ffffff60" fontSize={10} />
+              <XAxis dataKey="month" stroke="#ffffff30" fontSize={9} tick={{ fill: '#ffffff30' }} />
+              <YAxis hide />
               <Tooltip 
-                contentStyle={{ backgroundColor: 'rgba(15, 23, 42, 0.95)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', backdropFilter: 'blur(10px)' }}
-                labelStyle={{ color: '#fff' }}
+                contentStyle={{ 
+                  backgroundColor: 'rgba(0, 0, 0, 0.85)', 
+                  border: '1px solid rgba(255,255,255,0.2)', 
+                  borderRadius: '12px', 
+                  backdropFilter: 'blur(20px)', 
+                  padding: '8px 12px' 
+                }}
+                labelStyle={{ color: '#fff', fontWeight: '600', fontSize: '12px' }}
               />
-              <Line type="monotone" dataKey="youtube" stroke="#ef4444" strokeWidth={3} name="YouTube Views" dot={{ r: 4, fill: '#ef4444' }} />
-              <Line type="monotone" dataKey="tiktok" stroke="#00f2ea" strokeWidth={3} name="TikTok Views" dot={{ r: 4, fill: '#00f2ea' }} />
+              <Line type="monotone" dataKey="youtube" stroke="#ffffff" strokeWidth={2.5} dot={false} />
+              <Line type="monotone" dataKey="tiktok" stroke="#ffffff" strokeWidth={2.5} strokeDasharray="5 5" dot={false} />
             </LineChart>
           </ResponsiveContainer>
-        </div>
-        <div className="mt-2 text-center relative z-10">
-          <p className="text-sm text-white/60 bg-white/5 backdrop-blur-md rounded-lg px-4 py-2 inline-block border border-white/10">
-            Combined growth: <span className="font-bold text-emerald-400">{stats.combined.growthRate}%</span>
-          </p>
         </div>
       </div>
     );
   };
 
   const renderAchievementsSlide = () => (
-    <div className="relative h-full flex flex-col items-center justify-center p-8">
-      {/* Gradient orbs */}
-      <div className="absolute top-10 right-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 left-10 w-32 h-32 bg-pink-500/20 rounded-full blur-3xl"></div>
+    <div className="relative h-full flex flex-col items-center justify-center p-12 overflow-hidden">
+      {/* Background */}
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-white/8 rounded-full blur-3xl"></div>
       
-      <div className="relative z-10 w-full max-w-sm space-y-4">
-        {stats.achievements.map((achievement, idx) => {
-          const gradients = [
-            "from-yellow-500/20 to-orange-500/20",
-            "from-blue-500/20 to-cyan-500/20",
-            "from-red-500/20 to-pink-500/20"
-          ];
-          return (
-            <div
-              key={idx}
-              className={`bg-gradient-to-r ${gradients[idx]} backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-xl transform transition-all hover:scale-105 hover:border-white/20`}
-            >
-              <p className="text-xl font-bold text-white text-center">{achievement}</p>
-            </div>
-          );
-        })}
+      {/* Title */}
+      <div className={`absolute top-16 left-0 right-0 text-center transform transition-all duration-1000 ${animate ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
+        <h2 className="text-2xl font-bold text-white/60 uppercase tracking-widest">Your Achievements</h2>
+      </div>
+      
+      {/* Achievements - cleaner layout */}
+      <div className={`relative z-10 w-full max-w-md space-y-6 transform transition-all duration-1000 delay-200 ${animate ? 'scale-95 opacity-0' : 'scale-100 opacity-100'}`}>
+        {stats.achievements.map((achievement, idx) => (
+          <div
+            key={idx}
+            className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 text-center"
+            style={{ transitionDelay: `${idx * 150}ms` }}
+          >
+            <p className="text-xl font-black text-white tracking-tight">{achievement}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
 
   const renderTopCountriesSlide = () => (
-    <div className="relative h-full flex flex-col items-center justify-center p-8">
-      {/* Gradient orbs */}
-      <div className="absolute top-0 right-0 w-48 h-48 bg-blue-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
+    <div className="relative h-full flex flex-col items-center justify-center p-12 overflow-hidden">
+      {/* Background */}
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-white/8 rounded-full blur-3xl"></div>
       
-      <div className="relative z-10 w-full max-w-sm">
-        <div className="mb-8 text-center">
-          <div className="inline-block bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl mb-2 border border-white/20 shadow-xl">
-            <h1 className="text-xl font-bold text-white">Human Unicorn Pod</h1>
-          </div>
-          <div className="inline-block bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20 shadow-xl">
-            <h2 className="text-2xl font-bold text-white">Top countries</h2>
-          </div>
-        </div>
-        
-        <div className="space-y-3">
-          {stats.topCountries.map((country, idx) => (
-            <div key={idx} className="flex items-center gap-3 bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 hover:border-white/20 transition-all">
-              <div className="bg-gradient-to-br from-blue-500/30 to-purple-500/30 px-3 py-1 rounded-lg border border-white/20">
-                <span className="text-sm font-bold text-white">{String(country.rank).padStart(2, '0')}</span>
-              </div>
-              <div className="flex-1">
-                <span className="text-lg font-semibold text-white">{country.name}</span>
-              </div>
+      {/* Title */}
+      <div className={`absolute top-16 left-0 right-0 text-center transform transition-all duration-1000 ${animate ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
+        <h2 className="text-2xl font-bold text-white/60 uppercase tracking-widest">Top Countries</h2>
+      </div>
+      
+      {/* Countries list - cleaner */}
+      <div className={`relative z-10 w-full max-w-md space-y-4 transform transition-all duration-1000 delay-200 ${animate ? 'scale-95 opacity-0' : 'scale-100 opacity-100'}`}>
+        {stats.topCountries.map((country, idx) => (
+          <div 
+            key={idx} 
+            className="flex items-center gap-5 bg-white/10 backdrop-blur-xl rounded-xl p-5 border border-white/20"
+            style={{ transitionDelay: `${idx * 100}ms` }}
+          >
+            <div className="w-12 h-12 flex items-center justify-center bg-white/10 rounded-lg border border-white/20">
+              <span className="text-lg font-black text-white">{country.rank}</span>
             </div>
-          ))}
-        </div>
+            <div className="flex-1">
+              <span className="text-xl font-bold text-white">{country.name}</span>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
 
   const renderTopGuestsSlide = () => (
-    <div className="relative h-full flex flex-col items-center justify-center p-8">
-      <div className="absolute top-10 right-10 w-32 h-32 bg-indigo-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 left-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
+    <div className="relative h-full flex flex-col items-center justify-center p-12 overflow-hidden">
+      {/* Background */}
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-white/8 rounded-full blur-3xl"></div>
       
-      <div className="text-center relative z-10">
-        <h1 className="text-4xl font-bold mb-8 text-white">Star Guests</h1>
-        <div className="space-y-4 max-w-md mx-auto">
-          {stats.topGuests.map((guest, idx) => (
-            <div key={idx} className="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 hover:border-white/20 transition-all">
-              <div className="text-xl text-white font-semibold">{guest}</div>
-            </div>
-          ))}
-        </div>
-        <p className="mt-8 text-sm text-white/60 uppercase tracking-wider">Conversations that matter</p>
+      {/* Title */}
+      <div className={`absolute top-16 left-0 right-0 text-center transform transition-all duration-1000 ${animate ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
+        <h2 className="text-2xl font-bold text-white/60 uppercase tracking-widest">Star Guests</h2>
+      </div>
+      
+      {/* Guests list */}
+      <div className={`relative z-10 w-full max-w-md space-y-4 transform transition-all duration-1000 delay-200 ${animate ? 'scale-95 opacity-0' : 'scale-100 opacity-100'}`}>
+        {stats.topGuests.map((guest, idx) => (
+          <div 
+            key={idx} 
+            className="bg-white/10 backdrop-blur-xl rounded-xl p-5 border border-white/20 text-center"
+            style={{ transitionDelay: `${idx * 100}ms` }}
+          >
+            <div className="text-xl font-bold text-white">{guest}</div>
+          </div>
+        ))}
+      </div>
+      
+      {/* Footer text */}
+      <div className={`absolute bottom-16 left-0 right-0 text-center transform transition-all duration-1000 delay-500 ${animate ? 'opacity-0' : 'opacity-100'}`}>
+        <p className="text-xs font-bold text-white/50 uppercase tracking-[0.3em]">Conversations that matter</p>
       </div>
     </div>
   );
 
   const renderFinaleSlide = () => (
-    <div className="relative h-full flex flex-col items-center justify-center p-8">
-      <div className="absolute top-20 right-20 w-40 h-40 bg-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 left-20 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+    <div className="relative h-full flex flex-col items-center justify-center p-12 overflow-hidden">
+      {/* Background */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-[450px] h-[450px] bg-white/8 rounded-full blur-3xl"></div>
       
-      <div className="text-center relative z-10">
-        <div className="mb-8 animate-pulse">
-          {slide.icon}
-        </div>
-        <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">{slide.title}</h1>
-        <p className="text-2xl text-white opacity-90 font-light">{slide.subtitle}</p>
-        <p className="mt-6 text-sm text-white/60 uppercase tracking-wider">Your best year yet is coming</p>
+      {/* Main content */}
+      <div className={`relative z-10 flex flex-col items-center justify-center space-y-12 transform transition-all duration-1000 ${animate ? 'scale-95 opacity-0 translate-y-8' : 'scale-100 opacity-100 translate-y-0'}`}>
+        <h1 className="text-7xl font-black text-white leading-none tracking-[-0.03em] text-center">
+          {slide.title}
+        </h1>
+        <div className="h-px w-24 bg-white/30"></div>
+        <p className="text-3xl font-medium text-white/80 text-center tracking-wide">
+          {slide.subtitle}
+        </p>
+        <p className="text-sm font-bold text-white/50 uppercase tracking-[0.3em] mt-8">
+          Your best year yet is coming
+        </p>
       </div>
     </div>
   );
@@ -766,15 +841,15 @@ const HumanUnicornPodWrapped2025 = () => {
         return renderFinaleSlide();
       default:
         return (
-          <div className="relative h-full flex flex-col items-center justify-center p-8">
-            <div className={`transform transition-all duration-500 ${animate ? 'scale-110 opacity-0' : 'scale-100 opacity-100'}`}>
-              <div className="mb-8 animate-pulse">
-                {slide.icon}
-              </div>
-              <h1 className={`text-5xl font-bold mb-4 text-center leading-tight ${slide.textColor || 'text-white'}`}>
+          <div className="relative h-full flex flex-col items-center justify-center p-12 overflow-hidden">
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-white/8 rounded-full blur-3xl"></div>
+            <div className={`relative z-10 flex flex-col items-center justify-center space-y-12 transform transition-all duration-1000 ${animate ? 'scale-95 opacity-0 translate-y-8' : 'scale-100 opacity-100 translate-y-0'}`}>
+              <h1 className={`text-7xl font-black text-center leading-none tracking-[-0.03em] ${slide.textColor || 'text-white'}`}>
                 {slide.title}
               </h1>
-              <p className={`text-xl text-center mb-6 opacity-90 ${slide.textColor || 'text-white'}`}>
+              <div className="h-px w-24 bg-white/30"></div>
+              <p className={`text-3xl text-center font-medium tracking-wide ${slide.textColor || 'text-white'}/80`}>
                 {slide.subtitle}
               </p>
             </div>
@@ -784,11 +859,11 @@ const HumanUnicornPodWrapped2025 = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-black to-slate-950 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-black via-slate-950 to-black flex items-center justify-center p-4">
       <div className="max-w-md w-full">
         <div 
           ref={slideRef}
-          className={`relative bg-gradient-to-br ${slide.bg} rounded-3xl overflow-hidden shadow-2xl aspect-[9/16] border border-white/10`}
+          className={`relative bg-gradient-to-br ${slide.bg} rounded-3xl overflow-hidden shadow-2xl aspect-[9/16] border-2 border-white/20 transition-all duration-700`}
         >
           {/* Content */}
           <div className={`relative h-full ${slide.textColor || 'text-white'}`}>
@@ -796,11 +871,11 @@ const HumanUnicornPodWrapped2025 = () => {
           </div>
 
           {/* Navigation */}
-          <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center gap-4 px-8">
+          <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center gap-4 px-8 z-20">
             <button
               onClick={prevSlide}
               disabled={currentSlide === 0}
-              className="px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 disabled:opacity-30 hover:bg-white/20 hover:border-white/30 transition text-white disabled:cursor-not-allowed"
+              className="px-7 py-3 rounded-full bg-white/20 backdrop-blur-xl border-2 border-white/30 disabled:opacity-30 hover:bg-white/30 hover:border-white/50 hover:scale-110 transition-all duration-300 text-white disabled:cursor-not-allowed font-bold text-lg shadow-2xl"
             >
               ←
             </button>
@@ -809,10 +884,10 @@ const HumanUnicornPodWrapped2025 = () => {
               {slides.map((_, idx) => (
                 <div
                   key={idx}
-                  className={`h-2 rounded-full transition-all ${
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
                     idx === currentSlide 
-                      ? 'w-8 bg-white' 
-                      : 'bg-white/30 w-2'
+                      ? 'w-10 bg-white shadow-lg' 
+                      : 'bg-white/40 w-2.5 hover:bg-white/60'
                   }`}
                 />
               ))}
@@ -821,52 +896,52 @@ const HumanUnicornPodWrapped2025 = () => {
             <button
               onClick={nextSlide}
               disabled={currentSlide === slides.length - 1}
-              className="px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 disabled:opacity-30 hover:bg-white/20 hover:border-white/30 transition text-white disabled:cursor-not-allowed"
+              className="px-7 py-3 rounded-full bg-white/20 backdrop-blur-xl border-2 border-white/30 disabled:opacity-30 hover:bg-white/30 hover:border-white/50 hover:scale-110 transition-all duration-300 text-white disabled:cursor-not-allowed font-bold text-lg shadow-2xl"
             >
               →
             </button>
           </div>
 
           {/* Progress indicator */}
-          <div className="absolute top-4 right-4 text-sm text-white/60 bg-white/5 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+          <div className="absolute top-4 right-4 text-sm text-white/90 bg-white/20 backdrop-blur-xl px-4 py-2 rounded-full border-2 border-white/30 shadow-2xl font-bold z-20">
             {currentSlide + 1} / {slides.length}
           </div>
 
           {/* Share button */}
-          <div className="absolute top-4 left-4">
+          <div className="absolute top-4 left-4 z-20">
             <div className="relative">
               <button
                 onClick={() => setShowShareMenu(!showShareMenu)}
-                className="p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 hover:border-white/30 transition-all hover:scale-110"
+                className="p-3.5 rounded-full bg-white/20 backdrop-blur-xl border-2 border-white/30 text-white hover:bg-white/30 hover:border-white/50 transition-all hover:scale-110 shadow-2xl"
               >
                 <Share2 className="w-5 h-5" />
               </button>
 
               {/* Share menu */}
               {showShareMenu && (
-                <div className="absolute left-0 top-14 bg-slate-900/95 backdrop-blur-xl rounded-2xl shadow-2xl p-2 min-w-[200px] z-50 border border-white/20">
+                <div className="absolute left-0 top-14 bg-black/95 backdrop-blur-xl rounded-2xl shadow-2xl p-2 min-w-[220px] z-50 border-2 border-white/30">
                   <button
                     onClick={shareNative}
-                    className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition text-white text-left"
+                    className="w-full flex items-center gap-3 px-5 py-3.5 rounded-xl hover:bg-white/20 transition-all duration-300 text-white text-left font-semibold hover:scale-105"
                   >
                     <Share2 className="w-5 h-5" />
                     <span>Share</span>
                   </button>
                   <button
                     onClick={downloadSlide}
-                    className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition text-white text-left"
+                    className="w-full flex items-center gap-3 px-5 py-3.5 rounded-xl hover:bg-white/20 transition-all duration-300 text-white text-left font-semibold hover:scale-105"
                   >
                     <Download className="w-5 h-5" />
                     <span>Download Image</span>
                   </button>
                   <button
                     onClick={copyLink}
-                    className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition text-white text-left"
+                    className="w-full flex items-center gap-3 px-5 py-3.5 rounded-xl hover:bg-white/20 transition-all duration-300 text-white text-left font-semibold hover:scale-105"
                   >
                     {linkCopied ? (
                       <>
                         <Check className="w-5 h-5 text-emerald-400" />
-                        <span className="text-emerald-400">Copied!</span>
+                        <span className="text-emerald-400 font-bold">Copied!</span>
                       </>
                     ) : (
                       <>
@@ -875,10 +950,10 @@ const HumanUnicornPodWrapped2025 = () => {
                       </>
                     )}
                   </button>
-                  <div className="border-t border-white/10 my-2"></div>
+                  <div className="border-t border-white/20 my-2"></div>
                   <button
                     onClick={shareToTwitter}
-                    className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition text-white text-left"
+                    className="w-full flex items-center gap-3 px-5 py-3.5 rounded-xl hover:bg-white/20 transition-all duration-300 text-white text-left font-semibold hover:scale-105"
                   >
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
@@ -887,7 +962,7 @@ const HumanUnicornPodWrapped2025 = () => {
                   </button>
                   <button
                     onClick={shareToFacebook}
-                    className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition text-white text-left"
+                    className="w-full flex items-center gap-3 px-5 py-3.5 rounded-xl hover:bg-white/20 transition-all duration-300 text-white text-left font-semibold hover:scale-105"
                   >
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -896,7 +971,7 @@ const HumanUnicornPodWrapped2025 = () => {
                   </button>
                   <button
                     onClick={shareToLinkedIn}
-                    className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition text-white text-left"
+                    className="w-full flex items-center gap-3 px-5 py-3.5 rounded-xl hover:bg-white/20 transition-all duration-300 text-white text-left font-semibold hover:scale-105"
                   >
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
