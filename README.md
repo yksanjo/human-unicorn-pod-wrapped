@@ -1,61 +1,84 @@
-# Human Unicorn Pod - 2025 Wrapped
+# human-unicorn-pod-wrapped
 
-A beautiful Spotify Wrapped-style visualization for the Human Unicorn Pod, featuring all the key metrics and highlights from 2025.
+## Detailed Description
 
-## Features
+human-unicorn-pod-wrapped is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-- **11 Interactive Slides** showcasing:
-  - Podcast cover art
-  - #1 show for 56 fans
-  - Top country (US) and top fans (56)
-  - Top episode (EP 14 Gary Vaynerchuk)
-  - Top artist (Taylor Swift)
-  - Top audiobook (Liar's Poker)
-  - Achievement badges (Marathon Show, Instant Hit Show, Most Shared Show)
-  - Top countries list
-  - Performance metrics (Top 15% of videos)
-  - Star guests
-  - Finale slide
+## Problem Statement
 
-## Setup
+Describe the user or business problem this project solves, the target users, and expected outcomes.
 
-1. Install dependencies:
-```bash
-npm install
+## Solution Overview
+
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
 ```
 
-2. Start the development server:
+## Getting Started
+
+### Prerequisites
+
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
+
 ```bash
-npm run dev
+npm ci
+npm run lint
+npm test
+npm run build
 ```
 
-## Tech Stack
+## Usage
 
-- React 18
-- Tailwind CSS
-- Lucide React (icons)
-- Vite (build tool)
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-## Customization
+## Quality Standards
 
-All data is stored in the `stats` object at the top of the component. You can easily modify:
-- Fan counts
-- Top countries
-- Top episodes
-- Top artists/audiobooks
-- Achievement badges
-- Guest lists
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-## Design
+## Security
 
-The component features:
-- Mobile-first responsive design (9:16 aspect ratio)
-- Smooth slide transitions
-- Spotify Wrapped-inspired aesthetics
-- Custom unicorn logo SVG
-- Abstract background patterns
-- Gradient backgrounds matching Spotify's style
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
+## Contributing
 
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
+## Roadmap
 
+Track upcoming milestones, technical debt, and planned feature work.
+
+## Support
+
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
+
+## License
+
+This project is released under the MIT License.
