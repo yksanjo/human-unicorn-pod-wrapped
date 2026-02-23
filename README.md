@@ -1,5 +1,12 @@
 # human-unicorn-pod-wrapped
 
+Production-grade project scaffold focused on reliability, maintainability, and fast onboarding.
+
+[![CI](https://img.shields.io/github/actions/workflow/status/yksanjo/human-unicorn-pod-wrapped/ci.yml?branch=main&label=ci)](https://github.com/yksanjo/human-unicorn-pod-wrapped/actions)
+![License](https://img.shields.io/github/license/yksanjo/human-unicorn-pod-wrapped)
+![Last Commit](https://img.shields.io/github/last-commit/yksanjo/human-unicorn-pod-wrapped)
+![Repo Size](https://img.shields.io/github/repo-size/yksanjo/human-unicorn-pod-wrapped)
+
 ## Detailed Description
 
 human-unicorn-pod-wrapped is maintained as an industry-grade software project with production-ready engineering practices.  
